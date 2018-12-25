@@ -2,3 +2,7 @@
 
 My current resume generated with LaTeX
 
+
+## Preview
+
+![preview](https://github.com/barrettotte/Resume/blob/master/preview.PNG)
