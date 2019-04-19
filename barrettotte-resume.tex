@@ -12,8 +12,6 @@
 \pagestyle{empty}
 \raggedright
 
-
-
 \newcommand{\lineunder}{
 	\vspace*{-4pt}\\ 
 	\hspace*{-18pt}\hrulefill \\
@@ -51,7 +49,7 @@
 	\vspace*{5pt}
 }
 
-\newenvironment{resumeContent}{
+\newenvironment{resumecontent}{
 	\begin{list}
 		{\small$\bullet$}{\topsep 0pt \itemsep -2pt}}{\vspace*{4pt}
 	\end{list}
@@ -72,73 +70,65 @@
 		{White Hall, Maryland}
 		{barrettotte@gmail.com}
 		{xxx-xxx-xxxx}
-		{barrettotte.github.io}
+		{https://github.com/barrettotte}
 	
 	\resumeheader{SKILLS}
 		\textbf{\underline{Main:}} 
-			C\#, Java, ColdFusion, Python, C/C++, JavaScript, HTML/CSS, TypeScript, Node.js, Angular, SQL \\ \vspace*{4pt}
+			C\#, Java, Python, ColdFusion, C/C++, JavaScript, HTML/CSS, TypeScript, Node.js, Angular \\ \vspace*{4pt}
 		\textbf{\underline{Exposure:}} 
-			Groovy, Haskell, Shell, Ruby on Rails, PHP, Assembly x86, BASIC, FORTRAN, RPGLE \\ \vspace*{4pt}
+			Batch Script, PowerShell, Groovy, Shell, Ruby, XSLT, Assembly x86, RPGLE, CL Programming \\ \vspace*{4pt}
 		\textbf{\underline{Database:}} 
-			MSSQL, MySQL, MongoDB, PostgreSQL, Cassandra \\ \vspace*{4pt}
+			MSSQL/T-SQL, IBM DB2, MongoDB, PostgreSQL, Redis \\ \vspace*{4pt}
 		\textbf{\underline{Tools:}} 
-			Git, SVN, Bash, Gradle, Ant, Maven, Docker, GitLab CI/CD, Jenkins CI, JIRA, Vim, LaTeX \\ \vspace*{4pt}
+			Git, SVN, Gradle, Ant, Maven, Docker, GitLab CI/CD, Jenkins CI, Jira, Confluence, Nexus, Vim, LaTeX \\ \vspace*{4pt}
 		
 	\resumeheader{PROJECTS}
-		\project
-			{MyMovieList}
-			{Movie Tracking Web App; Capstone Group Project.}
-			{[Node.js, MySQL, HTML/CSS]}
-			\begin{resumeContent}
-				\item Located at \href{https://github.com/barrettotte/WebApp-MyMovieList}
-					{https://github.com/barrettotte/WebApp-MyMovieList}
-				\item CRUD (Create, Read, Update, Delete) functionality and sanitization for MySQL database.
-				\item Session Handling/Authentication, Heroku Cloud Deployment, Express, EJS, Promises, Helmet.
-			\end{resumeContent}
 		\project
 			{Terrain Generation Self Study}
 			{Using perlin noise to generate terrain.}
 			{[C\#, Unity Engine]}
-			\begin{resumeContent}
+			\begin{resumecontent}
 				\item Located at \href{https://github.com/barrettotte/Terrain-Generation-Study}
 					{https://github.com/barrettotte/Terrain-Generation-Study}
 				\item Terrain chunk and procedural octahedral sphere generation using threading and delegates.
 				\item LOD enabled terrain chunk scrolling using circular buffer data structure and queue. 
-			\end{resumeContent}
+			\end{resumecontent}
 		\project
-			{Seaport Simulation Project}
-			{Object oriented and concurrent programming semester project.} 
-			{[Java]}
-			\begin{resumeContent}
-				\item Located at \href{https://github.com/barrettotte/Seaport-Project}
-					{https://github.com/barrettotte/Seaport-Project}
-				\item Parse data using internal structure to create ships, people, and ports. Sorted with HashMaps.
-				\item Ships compete for open jobs depending on available resources and simulated using threading.
-			\end{resumeContent}
+			{SQL Unit POC}
+			{A POC MSSQL unit testing framework with Python and T-SQL} 
+			{[Python, MSSQL]}
+			\begin{resumecontent}
+				\item Located at \href{https://github.com/barrettotte/SQL-UNIT-POC}
+					{https://github.com/barrettotte/SQL-UNIT-POC}
+				\item Directory/file driven unit tests using T-SQL and JSON to compare expected vs actual
+				\item Leverages transactions and dynamic SQL to safely run SQL tests
+			\end{resumecontent}
+		\project
+			{Subarashii-CPU}
+			{Homebrew 8-bit RISC CPU in VHDL and breadboards} 
+			{[VHDL, Assembly]}
+			\begin{resumecontent}
+				\item Located at \href{https://github.com/barrettotte/Subarashii-CPU}
+					{https://github.com/barrettotte/Subarashii-CPU}
+				\item Designed and implemented 8-bit RISC instruction set
+				\item Harvard architecture, 8x8-bit registers, 256x8-bit RAM and ROM via EEPROM
+			\end{resumecontent}
 		\project
 			{Population Genetics Simulation}
 			{Simulate mocked DNA in organisms across n generations.}
 			{[Python]}
 		\project
+			{Anime Manager}
+			{Authenticate users and manage media lists.}
+			{[Java, Spring Boot, Angular, MSSQL]}
+		\project
 			{Assembly(x86) HTTP Server}
 			{Use system calls and sockets to serve a web page.}
-			{[Assembly, NASM]}
+			{[NASM Assembly]}
 		\project
-			{MEAN To Do List}
-			{Simple to do list using the MEAN Stack.}
-			{[MongoDB, ExpressJS, Angular6, Node.js]}
-		\project
-			{Fortran77-Enigma Machine}
-			{WWII enigma machine emulator for simple enigma encryption}
-			{[FORTRAN]}
-		\project
-			{8-Bit Breadboard Computer}
-			{Architecture Self Study – ALU, registers, memory, program counter, microcode}
-			{}
-		\begin{center}
-			\vspace*{-3pt}40+ repositories and always growing, located at 
-			\href{https://github.com/barrettotte}{https://github.com/barrettotte}
-		\end{center}
+			{Anilist Ruby}
+			{API Wrapper over Anilist's GraphQL API using metaprogramming}
+			{[Ruby, GraphQL]}
 
 	\resumeheader{EDUCATION}
 		\education
@@ -149,7 +139,7 @@
 		\education
 			{Towson University 2015-2016:} 
 			{Mathematics and Computer Science B.S. Cyber Security Minor}
-			{Statistics (calculus-based), Linear Algebra, Graph Theory, Abstract Algebra, and general coursework}
+			{Calculus-based Statistics, Linear Algebra, Graph Theory, Abstract Algebra, and general coursework}
 		\education
 			{Harford Community College Graduate 2015:}
 			{Computer Science A.S.}
@@ -162,10 +152,16 @@
 	\resumeheader{WORK HISTORY}
 		\employer{Goodville Mutual Casualty Company}{New Holland, PA}{Software Developer} {June 2018 - Current} {}
 			\vspace*{-8pt}
-			\begin{resumeContent}
-				\item Exposure to ColdFusion, Java, Angular, MSSQL, XSLT, Groovy, Spring Boot, RPGLE, Gradle, Maven, Ant, Jenkins CI, Agile Development, and JIRA.
-				\item Maintain/upgrade legacy ColdFusion and Java code to work towards modernization with microservices using Spring Boot, Angular, and Lucee.
+			\begin{resumecontent}
+				\item Mainly worked with Java, ColdFusion/Lucee, JavaScript, Angular, MSSQL, XSLT, SASS, Spring Boot, Drools, PowerShell, Groovy, and Jenkins CI.
+				\item Exposure to JBPM, Gradle, Maven, Ant, IBM DB2, RPGLE, CL Programming, and IBMi system.
+				\item Practiced Agile development with scrum and the Atlassian suite (Jira, Confluence, Bitbucket, FishEye).
+				\item Modernized legacy ColdFusion and Java code to work towards microservices using Spring Boot and Angular.
 				\item Worked with proof of concept team to automate existing Commercial Umbrella line of business.
-			\end{resumeContent}
+			\end{resumecontent}
 
+	\begin{center}
+		\small 
+		\vspace*{30pt} Generated with \LaTeX
+	\end{center}
 \end{document}
