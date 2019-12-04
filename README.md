@@ -3,9 +3,7 @@
 My current resume generated with LaTeX
 
 
-## Preview
-
-![preview](https://github.com/barrettotte/Resume/blob/master/preview.PNG)
+[View Here](https://github.com/barrettotte/Resume/blob/master/barrettotte-resume.pdf)
 
 
 ## Commands
