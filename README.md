@@ -8,8 +8,10 @@ My current resume generated with LaTeX
 ![preview](https://github.com/barrettotte/Resume/blob/master/preview.PNG)
 
 
-## Compile
-* Windows: ```compile.bat``` or ```pdflatex barrettotte-resume.tex```
+## Commands
+* Compile windows - ```compile.bat``` or ```pdflatex barrettotte-resume.tex```
+* Ubuntu Install - ```sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra```
+* Compile Ubuntu - ```./compile.sh``` or ```pdflatex barrettotte-resume.tex```
 
 
 ## Sources

@@ -1,3 +1,2 @@
 @ECHO OFF
-REM Arch texlive-bin repo was 404'ing so I guess I'll use Windows ...
 CALL pdflatex barrettotte-resume.tex
