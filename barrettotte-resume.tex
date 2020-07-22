@@ -4,6 +4,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{xcolor}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage[left=2cm, right=2cm, top=2cm, bottom=3cm]{geometry}
 
@@ -21,13 +22,13 @@
 	{\hspace*{-15pt}\vspace*{6pt}\textsc{#1}}\vspace*{-6pt}\lineunder
 }
 
-\newcommand{\employer}[5]{
-	{\textbf{#1}{\hfill\textbf{#2}}\\ 
-	{{\emph{#3}}}\hfill {#4}\\ \hfill {#5}}
+\newcommand{\employer}[4]{
+	{\underline{\textbf{#1}}{\hfill\textbf{#2}}\\ 
+	\vspace*{2pt}\textit{#3}\hfill \textit{#4}\\}
 }
 
-\newcommand{\project}[3]{
-	{\textbf{#1} - #2{\hfill\textbf{#3}}\vspace*{3pt}}
+\newcommand{\project}[2]{
+	{\textbf{\underline{#1}} - #2{\hfill}\vspace*{3pt}}
 }
 
 \newcommand{\contact}[5]{
@@ -43,10 +44,8 @@
 	\vspace*{-8pt}
 }
 
-\newcommand{\education}[3]{
-	{#1} \textbf{#2}\\
-	{\hspace*{12pt}#3 }\\ 
-	\vspace*{5pt}
+\newcommand{\education}[2]{
+	\textbf{\underline{{#1}}} \textit{#2}\vspace*{3pt}
 }
 
 \newenvironment{resumecontent}{
@@ -56,8 +55,9 @@
 }
 
 \newcommand{\resumeheader}[1]{
-	\vspace*{5pt}
+	\vspace*{10pt}
 	\header{\textbf{#1}}
+    \vspace*{5pt}
 }
 
 \begin{document}
@@ -71,100 +71,92 @@
 		{barrettotte@gmail.com}
 		{xxx-xxx-xxxx}
 		{https://github.com/barrettotte}
-	
+
 	\resumeheader{SKILLS}
-		\textbf{\underline{Main:}} 
-			C\#, Java, Python, ColdFusion, C/C++, JavaScript, HTML/CSS, TypeScript, Node, Ruby, PowerShell \\ \vspace*{4pt}
-		\textbf{\underline{Exposure:}}
-			Batch Script, Shell, Lua, Groovy, XSLT, Assembly x86, VHDL, RPGLE, CL, DDS \\ \vspace*{4pt}
-		\textbf{\underline{Database:}}
-			T-SQL, DB2, MongoDB, PostgreSQL, Redis \\ \vspace*{4pt}
-		\textbf{\underline{Framework:}}
-			Angular, .NET core, Entity, Spring Boot, JBoss, Express \\ \vspace*{4pt}
+		\textbf{\underline{Languages:}}
+			Java, Groovy, C\#, Python, SQL, RPGLE, TypeScript, JavaScript, HTML/CSS, ColdFusion, XSLT \\ \vspace*{5pt}
+		\textbf{\underline{Frontend:}}
+			Angular, Vue.js, Bootstrap, Material, SASS \\ \vspace*{5pt}
+        \textbf{\underline{Backend:}}
+			Spring Boot, Node.js, .NET Core, Flask, Express, JBPM \\ \vspace*{5pt}
+        \textbf{\underline{Database:}}
+			MSSQL, DB2, PostgreSQL, Redis, MongoDB \\ \vspace*{5pt}
 		\textbf{\underline{Tools:}}
-			Git, SVN, Gradle, Ant, Maven, Docker, GitLab CI/CD, Jenkins CI, Jira, Confluence, Nexus, Vim, LaTeX \\ \vspace*{4pt}
-		
-	\resumeheader{PROJECTS}
+			Git, SVN, Gradle, Docker, Jenkins CI, Sonatype Nexus \\ \vspace*{5pt}
+        \textbf{\underline{OS:}}
+            Windows, Linux (Ubuntu, CentOS, Manjaro), IBM i
+
+	\resumeheader{PERSONAL PROJECTS}
 		\project
-			{Terrain Generation Self Study}
-			{Using perlin noise to generate terrain.}
-			{[C\#, Unity Engine]}
+			{DSL 5250}
+			{A Groovy domain specific language designed to facilitate headless automation of a 5250 emulator.}
 			\begin{resumecontent}
-				\item Located at \href{https://github.com/barrettotte/Terrain-Generation-Study}
-					{https://github.com/barrettotte/Terrain-Generation-Study}
-				\item Terrain chunk and procedural octahedral sphere generation using threading and delegates.
-				\item LOD enabled terrain chunk scrolling using circular buffer data structure and queue. 
+				\item Found at \href{https://github.com/barrettotte/DSL-5250}
+					{https://github.com/barrettotte/DSL-5250}
 			\end{resumecontent}
-		\project
-			{SQL Unit POC}
-			{A POC MSSQL unit testing framework with Python and T-SQL} 
-			{[Python, T-SQL]}
-			\begin{resumecontent}
-				\item Located at \href{https://github.com/barrettotte/SQL-UNIT-POC}
-					{https://github.com/barrettotte/SQL-UNIT-POC}
-				\item Directory/file driven unit tests using T-SQL and JSON to compare expected vs actual
-				\item Leverages transactions and dynamic SQL to safely run SQL tests
+            \vspace*{3pt}
+        \project
+            {SpringBoot Project}
+            {Project to be completed in 2020}
+            \begin{resumecontent}
+				\item Found at \href{https://github.com/barrettotte}
+					{https://github.com/barrettotte}
 			\end{resumecontent}
-		\project
-			{Genshi BASIC}
-			{Interpreter for my first programming language}
-			{[Python, BASIC]}
-			\begin{resumecontent}
-				\item Located at \href{https://github.com/barrettotte/GenshiBASIC-Interpreter}
-					{https://github.com/barrettotte/GenshiBASIC-Interpreter}
-				\item Lexer, parser, and interpreter for Genshi BASIC (an odd dialect of BASIC)
-				\item Fundamentals of programming language design, recursive descent parsing, and AST's.
+            \vspace*{3pt}
+        \project
+            {Dotnet Project}
+            {Project to be completed in 2020}
+            \begin{resumecontent}
+				\item Found at \href{https://github.com/barrettotte}
+					{https://github.com/barrettotte}
 			\end{resumecontent}
+            \vspace*{3pt}
 		\project
-			{Subarashii-CPU}
-			{Homebrew 8-bit RISC CPU implemented in VHDL and breadboards} 
-			{[VHDL, Assembly]}
+			{Subarashii CPU}
+			{A 16-bit RISC CPU designed for educational purposes and written in Verilog.}
+            \begin{resumecontent}
+				\item Found at \href{https://github.com/barrettotte/Subarashii-CPU}
+					{https://github.com/barrettotte/Subarashii-CPU}
+			\end{resumecontent}
+            \vspace*{3pt}
 		\project
-			{Population Genetics Simulation}
-			{Simulate mocked DNA in organisms across n generations.}
-			{[Python]}
-		\project
-			{Assembly(x86) HTTP Server}
-			{Use system calls and sockets to serve a web page.}
-			{[NASM Assembly]}
-		\project
-			{Anilist Ruby}
-			{API Wrapper over Anilist's GraphQL API using metaprogramming}
-			{[Ruby, GraphQL]}
+			{RangerLang}
+			{A basic programming language and compiler written in C to learn about compiler design.}
+            \begin{resumecontent}
+				\item Found at \href{https://github.com/barrettotte/RangerLang}
+					{https://github.com/barrettotte/RangerLang}
+			\end{resumecontent}
 
 	\resumeheader{EDUCATION}
-		\education
-			{University of Maryland Global Campus 2018:} 
-			{Computer Science B.S. Cyber Security Minor}
-			{Data Structures and Algorithms, Network Security, Software Engineering, Ethical Hacking, Concurrent
-			\hspace*{12pt}Programming, Algorithm Analysis/Design, Computer Architecture, Database Admin.}
-		\education
-			{Towson University 2015-2016:} 
-			{}
-			{Calculus-based Statistics, Linear Algebra, Graph Theory, Abstract Algebra, and general coursework}
-		\education
-			{Harford Community College Graduate 2015:}
-			{Computer Science A.S.}
-			{Vector and Integral Calculus, Networking, Assembly(x86), Discrete Mathematics, C/C++, Java}
-		\education
-			{North Harford High School Graduate 2014:} 
-			{Computer Science/Computer Information Systems Track}
-			{Maryland Scholar, Computer Science, Physics, C++ Programming, Marketing, Java Programming}
+		\education {Computer Science B.S. Cyber Security Minor}{University of Maryland Global Campus 2018}
+            \begin{resumecontent}
+                \item Algorithm Analysis, Data Structures, Concurrent Programming, Programming Language Design
+                \item Network Security, Software Engineering, Ethical Hacking, Computer Architecture, Linear Algebra
+            \end{resumecontent}
+            \vspace*{3pt}
+		\education {Computer Science A.S.}{Harford Community College 2015}
+            \begin{resumecontent}
+                \item Vector and Integral Calculus, Networking, Assembly(x86), Discrete Mathematics, C/C++, Java
+            \end{resumecontent}
 
 	\resumeheader{WORK HISTORY}
-		\employer{Goodville Mutual Casualty Company}{New Holland, PA}{Software Developer} {June 2018 - Current} {}
-			\vspace*{-8pt}
+        \employer{Software Developer Analyst}{01/2020 - Present}{Goodville Mutual Casualty Company}{New Holland, PA}
+            \vspace*{2pt}
 			\begin{resumecontent}
-				\item Mainly worked with Java, ColdFusion, JavaScript, Angular, T-SQL, XSLT, SASS, Spring Boot, Drools, PowerShell, and Jenkins CI.
-				\item Exposure to Groovy, JBPM, Gradle, Maven, Ant, DB2, RPGLE, CL, and IBMi system.
-				\item Practiced Agile development with scrum and the Atlassian suite (Jira, Confluence, Bitbucket, FishEye).
+				\item Worked on production support team to gain experience with IBM i and maintain production environment.
+                \item Learned IBM i midrange system, RPGLE, DDS, Control Language, and legacy policy processing workflow.
+			\end{resumecontent}
+            \vspace*{4pt}
+		\employer{Software Web Developer}{06/2018 - 01/2020}{Goodville Mutual Casualty Company}{New Holland, PA}
+            \vspace*{2pt}
+			\begin{resumecontent}
+				\item Worked with Java, Groovy, ColdFusion, JavaScript, Angular, SQL, XSLT, Drools, and Jenkins CI.
 				\item Modernized legacy ColdFusion and Java code to work towards microservices using Spring Boot and Angular.
-				\item Worked with small team to automate commercial umbrella line of business.
-				\item Given the opportunity and support to learn IBMi system, RPGLE, DDS, and CL.
+				\item Worked on small team to automate commercial umbrella line of business.
 			\end{resumecontent}
 
 	\begin{center}
 		\small 
-		\vspace*{18pt} Generated with \LaTeX
+		\vspace*{55pt} Built with \LaTeX
 	\end{center}
 \end{document}
