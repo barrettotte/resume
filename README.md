@@ -1,16 +1,16 @@
 # [Resume](https://github.com/barrettotte/Resume/blob/master/barrettotte-resume.pdf)
 
-My current resume generated with LaTeX
-
+My somewhat current resume.
 
 [View Here](https://github.com/barrettotte/Resume/blob/master/barrettotte-resume.pdf)
 
+## Build
 
-## Commands
-* Compile windows - ```compile.bat``` or ```pdflatex barrettotte-resume.tex```
-* Ubuntu Install - ```sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra```
-* Compile Ubuntu - ```./compile.sh``` or ```pdflatex barrettotte-resume.tex```
+- Linux
+  - dependencies: `sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra`
+  - build: `make`
+- Windows - `compile.bat`
 
+## References
 
-## Sources
-* Windows: MiKTeX https://miktex.org
+- Windows: MiKTeX https://miktex.org

@@ -22,40 +22,38 @@
 	{\hspace*{-15pt}\vspace*{6pt}\textsc{#1}}\vspace*{-6pt}\lineunder
 }
 
-\newcommand{\employer}[4]{
-	{\underline{\textbf{#1}}{\hfill\textbf{#2}}\\ 
-	\vspace*{2pt}\textit{#3}\hfill \textit{#4}\\}
+\newcommand{\employer}[3]{
+	\textbf{#1} - #2 \vspace*{2pt} \hfill \textbf{#3} \vspace*{2pt}
 }
 
 \newcommand{\project}[2]{
-	{\textbf{\underline{#1}} - #2{\hfill}\vspace*{3pt}}
+	\vspace*{3pt} \textbf{#1} - \small{\href{#2}{#2}}
 }
 
 \newcommand{\contact}[5]{
-	\vspace*{-8pt}
 	\begin{center}
-		{\Large \textbf \scshape {#1}}\\
-		\normalsize #2\\
-		\normalsize #3 \hspace*{20pt} 
-		\normalsize #4 \hspace*{20pt}
-		\normalsize #5
-		\lineunder
+		{\Large \textbf \scshape \bfseries{#1}}
 	\end{center}
-	\vspace*{-8pt}
+	\small{#2} \hfill \small{#3} \break
+	\small{#4} \hfill \small{#5} \break
+	\vspace*{-6pt}
+	\lineunder
+	\vspace*{-6pt}
 }
 
-\newcommand{\education}[2]{
-	\textbf{\underline{{#1}}} \textit{#2}\vspace*{3pt}
+\newcommand{\education}[3]{
+	\textbf{#1} - #2 \hfill \textbf{#3} \vspace*{3pt}
 }
 
-\newenvironment{resumecontent}{
+\newenvironment{resumelist}{
+	\vspace*{2pt}
 	\begin{list}
 		{\small$\bullet$}{\topsep 0pt \itemsep -2pt}}{\vspace*{4pt}
 	\end{list}
 }
 
 \newcommand{\resumeheader}[1]{
-	\vspace*{10pt}
+	\vspace*{14pt}
 	\header{\textbf{#1}}
     \vspace*{5pt}
 }
@@ -66,84 +64,90 @@
 	\vspace*{-44pt}
 
 	\contact
-		{\bfseries BARRETT D. OTTE}
-		{White Hall, Maryland}
+		{BARRETT OTTE}
 		{barrettotte@gmail.com}
-		{xxx-xxx-xxxx}
-		{https://github.com/barrettotte}
+		{github.com/barrettotte}
+		{White Hall, Maryland}
+		{linkedin.com/in/barrettotte}
 
 	\resumeheader{SKILLS}
-		\textbf{\underline{Languages:}}
-			Java, Groovy, C\#, Python, SQL, RPGLE, TypeScript, JavaScript, ColdFusion, XSLT, HTML/CSS \\ \vspace*{5pt}
-		\textbf{\underline{Frontend:}}
-			Angular, Vue.js, Bootstrap, Material, SASS \\ \vspace*{5pt}
-        \textbf{\underline{Backend:}}
-			Spring Boot, Node.js, .NET Core, Flask, Express, JBPM, Drools \\ \vspace*{5pt}
-        \textbf{\underline{Database:}}
-			MSSQL, DB2, PostgreSQL, Redis, MongoDB \\ \vspace*{5pt}
-		\textbf{\underline{Tools:}}
-			Git, SVN, Docker, Gradle, Jenkins CI \\ \vspace*{5pt}
-        \textbf{\underline{OS:}}
-            Windows, Linux, IBM i
-
-	\resumeheader{PERSONAL PROJECTS}
-		\project
-			{DSL 5250}
-			{A Groovy domain specific language designed to promote headless automation of a 5250 emulator.}
-			\begin{resumecontent}
-				\item Found at \href{https://github.com/barrettotte/DSL-5250}
-					{https://github.com/barrettotte/DSL-5250}
-			\end{resumecontent}
-            \vspace*{3pt}
-		\project
-			{Subarashii CPU}
-			{A 16-bit RISC CPU designed for educational purposes and written in Verilog.}
-            \begin{resumecontent}
-				\item Found at \href{https://github.com/barrettotte/Subarashii-CPU}
-					{https://github.com/barrettotte/Subarashii-CPU}
-			\end{resumecontent}
-            \vspace*{3pt}
-		\project
-			{RangerLang}
-			{A basic programming language and compiler written in C to learn about compiler design.}
-            \begin{resumecontent}
-				\item Found at \href{https://github.com/barrettotte/RangerLang}
-					{https://github.com/barrettotte/RangerLang}
-			\end{resumecontent}
+		\textbf{Languages:}
+			Java, Groovy, SQL, RPGLE, TypeScript, C\#, Python, JavaScript, ColdFusion, XSLT, VBScript\\
+			\vspace*{5pt}
+        \textbf{Backend:}
+			Spring Boot, Gradle, JBPM, Drools, .NET Core, Flask, Node.js, Apache FOP\\
+			\vspace*{5pt}
+		\textbf{Frontend:}
+			Angular, Vue.js, RxJS, SCSS, Bootstrap, Stencil.js, jQuery\\
+			\vspace*{5pt}
+        \textbf{Database:}
+			MSSQL, DB2, PostgreSQL, Redis, MongoDB\\
+			\vspace*{5pt}
+		\textbf{Tools:}
+			Docker, Kubernetes, Nginx, Git, SVN, Jenkins, GitHub Actions, AWS Lambda, Azure AD, Elasticsearch\\
+			\vspace*{5pt}
+        \textbf{OS:}
+            Windows, Linux, IBM i\\
+			\vspace*{5pt}
+		\textbf{Other:}
+			Atlassian Suite, Agile Scrum Methodologies, Microservices (REST and SOAP)
 
 	\resumeheader{EDUCATION}
-		\education {Computer Science B.S. Cyber Security Minor}{University of Maryland Global Campus 2018}
-            \begin{resumecontent}
+		\education 
+			{Computer Science B.S. with Cyber Security Minor}{University of Maryland Global Campus} 
+			{2018}
+            \begin{resumelist}
                 \item Algorithm Analysis, Data Structures, Concurrent Programming, Programming Language Design
                 \item Network Security, Software Engineering, Ethical Hacking, Computer Architecture, Linear Algebra
-            \end{resumecontent}
-            \vspace*{3pt}
-		\education {Computer Science A.S.}{Harford Community College 2015}
-            \begin{resumecontent}
+            \end{resumelist}
+            \vspace*{6pt}
+		\education
+			{Computer Science A.S.}{Harford Community College}
+			{2015}
+            \begin{resumelist}
                 \item Vector and Integral Calculus, Networking, Assembly(x86), Discrete Mathematics, C/C++, Java
-            \end{resumecontent}
+            \end{resumelist}
 
 	\resumeheader{WORK HISTORY}
-        \employer{Software Developer Analyst}{01/2020 - Present}{Goodville Mutual Casualty Company}{New Holland, PA}
-            \vspace*{2pt}
-			\begin{resumecontent}
-                \item Languages - RPG, RPGLE, DB2 SQL, Control Language (CL), and DDS.
-				\item Learned legacy IBM i system to bridge the gap between IBM i and web developers to aid in future system modernization.
-                \item Worked with Production Support team tasked with fixing bugs and augmenting existing IBM i codebase as requested.
-                \item Worked with Commercial Enhancements team tasked with implementing new coverages/features between IBM i and web applications for commercial line of business.
-			\end{resumecontent}
+        \employer
+			{Software Developer Analyst}{Goodville Mutual Casualty Company}{01/2020 - Present}
+			\begin{resumelist}
+				\item Worked on modernization projects using Spring Boot, Angular, SQL.
+				\item Supported and learned IBM i midrange system using RPGLE, DB2 SQL, Control Language, and DDS.
+				\item Became a new IBM i resource to help bridge the knowledge gap between web and legacy systems.
+				\item Aided in claims system migration and integration.
+			\end{resumelist}
             \vspace*{4pt}
-		\employer{Software Web Developer}{06/2018 - 01/2020}{Goodville Mutual Casualty Company}{New Holland, PA}
-            \vspace*{2pt}
-			\begin{resumecontent}
-                \item Languages - Java, Groovy, SQL, ColdFusion, JavaScript, Drools, and XSLT.
-                \item Frameworks/Tools - Angular, Spring Boot, JBPM, jQuery, Jenkins CI, SASS, Gradle, Ant.
-				\item Worked on modernizing legacy ColdFusion and Java monoliths to make progress towards microservices using Spring Boot and Angular.
-				\item Worked with System Modernization team tasked with implementing commercial umbrella line of business.
-			\end{resumecontent}
-
-	\begin{center}
-		\small 
-		\vspace*{35pt} Built with \LaTeX
-	\end{center}
+		\employer
+			{Software Web Developer}{Goodville Mutual Casualty Company}{06/2018 - 01/2020}
+			\begin{resumelist}
+				\item Worked on modernizing existing systems using Spring Boot, Angular, and SQL.
+				\item Supported and augmented ColdFusion and Java monolith systems.
+			\end{resumelist}
+	
+	\resumeheader{PERSONAL}
+		\textbf{Other Skills:}
+			Go, C, {C\tiny{++}}, Assembly (x86, ARM), Verilog, Ruby, Kotlin, LaTeX, GraphQL\\
+			\vspace*{5pt}
+		\textbf{Interests:}
+			History of computing, computer architecture, compilers, electronics\\
+			\vspace*{12pt}
+		\project
+			{DSL-5250}{https://github.com/barrettotte/DSL-5250}
+			\begin{resumelist}
+				\item A Groovy domain specific language designed to facilitate headless automation of a 5250 emulator.
+				\item Written as a proof of concept for easy screen automation/scraping during covid.
+			\end{resumelist}
+		\project
+			{ARM Assembly QR Code}{https://github.com/barrettotte/qr-asm}
+			\begin{resumelist}
+				\item Generating a QR code from scratch with only ARM assembly.
+				\item Implemented Reed-Solomon error correction with polynomial arithmetic and light Galois theory.
+			\end{resumelist}
+		\project
+			{VS Code IBM i Languages}{https://github.com/barrettotte/vscode-ibmi-languages}
+			\begin{resumelist}
+				\item Syntax highlighting for IBM i languages such as RPG, CL, DDS, MI, and RPGLE fixed/free.
+				\item Written to increase productivity while maintaining legacy IBM i systems.
+			\end{resumelist}
 \end{document}
