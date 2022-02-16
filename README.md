@@ -4,6 +4,8 @@ My somewhat current resume.
 
 [View Here](https://github.com/barrettotte/Resume/blob/master/barrettotte-resume.pdf)
 
+[LinkedIn](https://www.linkedin.com/in/barrettotte/)
+
 ## Build
 
 - Linux
