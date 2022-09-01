@@ -54,9 +54,9 @@
 }
 
 \newcommand{\resumeheader}[1]{
-	\vspace*{14pt}
+	\vspace*{10pt}
 	\header{\textbf{#1}}
-    \vspace*{5pt}
+    \vspace*{3pt}
 }
 
 \begin{document}
@@ -83,7 +83,7 @@
 			Angular, Vue.js, RxJS, SCSS, Bootstrap, Stencil.js\\
 			\vspace*{5pt}
         \textbf{Data:}
-			Postgres, DB2, MSSQL, Redis, Apache Kafka, ElasticSearch\\
+			Postgres, DB2, MSSQL, Redis, Apache Kafka, ElasticSearch, Grafana\\
 			\vspace*{5pt}
 		\textbf{Tools/Other:}
 			Docker, Kubernetes, Nginx, Git, SVN, Jenkins, Gitlab, AWS Lambda, Azure AD\\
@@ -94,7 +94,7 @@
 			{Software Engineer}{Enlighten, a Huntington Ingalls Industries Company}{01/2022 - Present}
 			\begin{resumelist}
 				\item Responsible for maintaining the Air Force BDP (Big Data Platform).
-				\item Primarily worked with Java, Postgres, Spring, Hadoop, and Apache Kafka.
+				\item Primarily worked with Java, Postgres, Spring, Apache Kafka, Hadoop, and Grafana.
 				\item Held Secret clearance (April 2022 - present).
 			\end{resumelist}
 			\vspace*{6pt}
@@ -130,30 +130,34 @@
 				\item Vector and Integral Calculus, Networking, Assembly(x86), Discrete Mathematics, C/C++, Java
 			\end{resumelist}
 	
-	\resumeheader{PERSONAL}
+	\resumeheader{PROJECTS}
 		\project
 			{DSL-5250}{https://github.com/barrettotte/DSL-5250}
 			\begin{resumelist}
 				\item A Groovy domain specific language designed to facilitate headless automation of a 5250 emulator.
-				\item Written as a proof of concept for easy screen automation/scraping during covid.
+				\item Written as a proof of concept for easy screen automation/scraping of legacy system during covid.
 			\end{resumelist}
 		\project
 			{ARM Assembly QR Code}{https://github.com/barrettotte/qr-asm}
 			\begin{resumelist}
-				\item Generating a QR code from scratch with only ARM assembly.
+				\item A challenge to generate a QR code from scratch with only ARM assembly.
 				\item Implemented Reed-Solomon error correction with polynomial arithmetic and light Galois theory.
 			\end{resumelist}
 		\project
-			{VS Code IBM i Languages}{https://github.com/barrettotte/vscode-ibmi-languages}
+			{Enki OS}{https://github.com/barrettotte/enki-os}
 			\begin{resumelist}
-				\item Syntax highlighting for IBM i languages such as RPG, CL, DDS, MI, and RPGLE fixed/free.
-				\item Written to increase productivity while maintaining legacy IBM i systems.
+				\item A small 32-bit x86 kernel made to study how operating systems function.
+				\item Implemented bootloader, FAT-16, Lib C, ELF loader, processes, userland, and more.
 			\end{resumelist}
-		\vspace*{12pt}
-		\textbf{Other Skills:}
-			Go, C, {C\tiny{++}}, Assembly (x86, ARM), Verilog, Ruby, LaTeX, GraphQL\\
-			\vspace*{5pt}
-		\textbf{Interests:}
-			History of computing, computer architecture, compilers, electronics\\
+		\project
+			{Perceptron ASM}{https://github.com/barrettotte/perceptron-asm}
+			\begin{resumelist}
+				\item A challenge to implement a single-layer perceptron neural network implemented in x86 assembly.
+			\end{resumelist}
+		\project
+			{Angstrom CPU}{https://github.com/barrettotte/angstrom-cpu}
+			\begin{resumelist}
+				\item A 4-bit accumulator-based CPU designed to do the bare minimum and nothing more.
+			\end{resumelist}
 
 \end{document}
