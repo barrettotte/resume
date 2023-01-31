@@ -26,8 +26,12 @@
 	\textbf{#1} - #2 \vspace*{2pt} \hfill \textbf{#3} \vspace*{2pt}
 }
 
-\newcommand{\project}[2]{
-	\vspace*{3pt} \textbf{#1} - \small{\href{#2}{#2}}
+\newcommand{\education}[3]{
+	\textbf{#1} - #2 \hfill \textbf{#3} \vspace*{3pt}
+}
+
+\newcommand{\project}[3]{
+	\vspace*{3pt} \textbf{#1} - \small{\href{#2}{#2}} \hfill \textbf{#3} \vspace*{2pt}
 }
 
 \newcommand{\contact}[6]{
@@ -40,10 +44,6 @@
 	\vspace*{-6pt}
 	\lineunder
 	\vspace*{-6pt}
-}
-
-\newcommand{\education}[3]{
-	\textbf{#1} - #2 \hfill \textbf{#3} \vspace*{3pt}
 }
 
 \newenvironment{resumelist}{
@@ -80,10 +80,10 @@
 			Spring, Spring Boot, Node.js, Drools\\
 			\vspace*{5pt}
 		\textbf{Frontend:}
-			Angular, Vue.js, Stencil.js\\
+			Angular, Vue.js, Stencil.js, HTML, CSS\\
 			\vspace*{5pt}
         \textbf{Data:}
-			Postgres, DB2, MSSQL, Apache Kafka, ElasticSearch, Prometheus, Grafana\\
+			Postgres, DB2 SQL, MSSQL, Apache Kafka, ElasticSearch, Prometheus, Grafana\\
 			\vspace*{5pt}
 		\textbf{Tools/Other:}
 			Docker, Kubernetes, Nginx, Git, SVN, Jenkins, Gitlab, AWS Lambda, Azure AD\\
@@ -102,7 +102,7 @@
 			{Software Developer Analyst}{Goodville Mutual Casualty Company}{01/2020 - 01/2022}
 			\begin{resumelist}
 				\item Worked on modernization projects using Spring Boot, Angular, MSSQL, and DB2 SQL.
-				\item Supported and learned IBM i legacy system using RPGLE, DB2 SQL, Control Language, and DDS.
+				\item Supported and learned legacy IBM i system using RPGLE, DB2 SQL, Control Language, and DDS.
 				\item Aided in claims system data migration and integration.
 				\item Exposure to XSLT, Drools, AWS, SalesForce, Kubernetes, and Jenkins.
 			\end{resumelist} 
@@ -132,32 +132,37 @@
 	
 	\resumeheader{PROJECTS}
 		\project
-			{DSL-5250}{https://github.com/barrettotte/DSL-5250}
+			{Perceptron ASM}{https://github.com/barrettotte/perceptron-asm}
+			{2022}
 			\begin{resumelist}
-				\item A Groovy domain specific language designed to facilitate headless automation of a 5250 emulator.
-				\item Written as a proof of concept for easy screen automation/scraping of legacy system during covid.
-			\end{resumelist}
-		\project
-			{ARM Assembly QR Code}{https://github.com/barrettotte/qr-asm}
-			\begin{resumelist}
-				\item A challenge to generate a QR code from scratch with only ARM assembly.
-				\item Implemented Reed-Solomon error correction with polynomial arithmetic and light Galois theory.
+				\item A challenge to implement a single-layer perceptron neural network in only x86 assembly.
 			\end{resumelist}
 		\project
 			{Enki OS}{https://github.com/barrettotte/enki-os}
+			{2022}
 			\begin{resumelist}
 				\item A small 32-bit x86 kernel made to study how operating systems function.
 				\item Implemented bootloader, FAT-16, Lib C, ELF loader, processes, userland, and more.
 			\end{resumelist}
 		\project
-			{Perceptron ASM}{https://github.com/barrettotte/perceptron-asm}
-			\begin{resumelist}
-				\item A challenge to implement a single-layer perceptron neural network in only x86 assembly.
-			\end{resumelist}
-		\project
 			{Angstrom CPU}{https://github.com/barrettotte/angstrom-cpu}
+			{2021}
 			\begin{resumelist}
 				\item A 4-bit accumulator-based CPU designed to do the bare minimum and nothing more.
+			\end{resumelist}
+		\project
+			{ARM Assembly QR Code}{https://github.com/barrettotte/qr-asm}
+			{2021}
+			\begin{resumelist}
+				\item A challenge to generate a QR code from scratch with only ARM assembly.
+				\item Implemented Reed-Solomon error correction with polynomial arithmetic and light Galois theory.
+			\end{resumelist}
+		\project
+			{DSL-5250}{https://github.com/barrettotte/DSL-5250}
+			{2021}
+			\begin{resumelist}
+				\item A Groovy domain specific language designed to facilitate headless automation of a 5250 emulator.
+				\item Written as a proof of concept for easy screen automation/scraping of legacy system during Covid.
 			\end{resumelist}
 
 \end{document}
