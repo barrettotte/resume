@@ -1,18 +1,18 @@
-# [Resume](https://github.com/barrettotte/Resume/blob/master/barrettotte-resume.pdf)
+# resume
 
-My somewhat current resume.
+My resume written in LaTeX.
 
-[View Here](https://github.com/barrettotte/Resume/blob/master/barrettotte-resume.pdf)
+[View Resume](https://github.com/barrettotte/resume/blob/master/barrettotte-resume.pdf)
 
 [LinkedIn](https://www.linkedin.com/in/barrettotte/)
 
 ## Build
 
-- Linux
-  - dependencies: `sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra`
-  - build: `make`
-- Windows - `compile.bat`
+```sh
+docker build -t barrettotte-resume .
+docker run -e "RESUME_NAME=barrettotte-resume" --rm -v $(shell pwd):/out barrettotte-resume
 
-## References
-
-- Windows: MiKTeX https://miktex.org
+# or with make
+make image
+make build
+```

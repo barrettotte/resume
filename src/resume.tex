@@ -1,0 +1,177 @@
+\documentclass[a4paper]{article}
+
+% general document settings
+\textheight=12in
+\fontsize{15pt}{30pt}
+\pagestyle{empty}
+\raggedright
+\setlength{\parindent}{0pt}
+
+% imports
+\usepackage[colorlinks=false, hidelinks]{hyperref}
+\usepackage[margin=0.5in, showframe=false]{geometry}
+
+\ExplSyntaxOn
+    % get environment variable.
+    % example: \getenv{HOME}
+    % reference: https://tex.stackexchange.com/questions/62010/can-i-access-system-environment-variables-from-latex-for-instance-home
+    \NewDocumentCommand{\getenv}{om}{
+        \sys_get_shell:nnN { kpsewhich ~ --var-value ~ #2 }
+        { \cctab_select:N \c_str_cctab } \l_tmpa_tl
+        \tl_trim_spaces:N \l_tmpa_tl
+        \IfNoValueTF { #1 }
+        { \tl_use:N \l_tmpa_tl }
+        { \tl_set_eq:NN #1 \l_tmpa_tl }
+    }
+
+    % check if env variable is set and non-blank.
+    % example: \ifenvsetTF{PHONE_NUMBER}
+    % reference: https://tex.stackexchange.com/questions/548836/switch-based-on-whether-or-not-an-environment-variable-is-set
+    \tl_const:Nn \c_getenv_par_tl { \par }
+    \NewDocumentCommand{\ifenvsetTF}{mmm}{
+        \sys_get_shell:nnN { kpsewhich ~ --var-value ~ #1 } { } \l_tmpa_tl
+        \tl_if_eq:NNTF \l_tmpa_tl \c_getenv_par_tl { #3 } { #2 }
+    }
+\ExplSyntaxOff
+
+% first and last name header
+\newcommand{\nameheader}[1]{
+    \begin{center}
+        {\Large\textbf\scshape\bfseries{#1}}
+    \end{center}
+}
+
+% header with line separator for each section
+\newcommand{\resumeheader}[1]{
+    \vspace*{8pt}
+    \textbf{#1}\vspace*{-6pt}\vspace*{-4pt}\\ \hrulefill\\
+    \vspace*{8pt}
+}
+
+% display contact info at top of page
+\newcommand{\contact}[3]{
+    \centerline{
+        {#1} \textbar{}%
+        \ifenvsetTF{PHONE_NUMBER}{ \getenv{PHONE_NUMBER} \textbar{}}{} %
+        \href{mailto:#2}{#2} \textbar{} %
+        \href{#3}{#3}%
+    }
+}
+
+% aligned list of skills
+\newcommand{\skills}[2]{
+    \textbf{\makebox[100pt][l]{#1}} #2\\\vspace*{6pt}
+}
+
+% item that has a title, location, and a year
+\newcommand{\history}[3]{
+    \textbf{#1} - #2\hfill\textbf{#3}
+}
+
+% item with title, url, and year
+\newcommand{\project}[3]{
+    \textbf{#1} - \href{#2}{#2}\hfill\textbf{#3}
+}
+
+% aligned list of interests/misc
+\newcommand{\interests}[2]{
+    \textbf{\makebox[62pt][l]{#1}} #2\\\vspace*{6pt}
+}
+
+% bulleted list
+\newenvironment{resumelist}{
+    \vspace*{4pt}
+    \begin{list}
+        {\small$\bullet$}{\topsep 0pt \itemsep -2pt \leftmargin=22pt}}{\vspace*{4pt}
+    \end{list}
+}
+
+% main document
+\begin{document}
+    \normalsize
+
+    % main header
+    \vspace*{-20pt}
+    \nameheader{BARRETT OTTE}
+    \vspace*{-6pt}
+    \contact{Maryland}{barrettotte@gmail.com}{https://github.com/barrettotte}
+
+    % summary and skills ==================================================================================================================
+    \vspace*{-6pt}
+    \resumeheader{SUMMARY}
+        \skills{Languages:}{Java, SQL, TypeScript, Python, C\texttt{\#}, JavaScript, ColdFusion, Groovy, RPGLE, Shell}
+        \skills{Backend:}{Spring Boot, Jersey, Apache Velocity, Node.js, JBPM, Drools}
+        \skills{Frontend:}{Vue.js, Angular, jQuery, Sass, HTML/CSS}
+        \skills{Databases:}{Postgres, Db2 for IBM i, Microsoft SQL Server, MongoDB, Apache Accumulo}
+        \skills{Data Engineering:}{Apache Kafka, Apache NiFi, Grafana, Prometheus, Hadoop, ElasticSearch}
+        \skills{DevOps/Cloud:}{Docker, Kubernetes, Ansible, Nginx, Jenkins, Gitlab, Nexus, AWS, Azure AD}
+        \skills{Certifications:}{CompTIA Security\texttt{+}, AWS Certified Cloud Practitioner, AWS Cloud Developer Associate}
+        \skills{Security Clearance:}{Active security clearance (2022 - present)}
+
+    % work experience =====================================================================================================================
+    \resumeheader{WORK EXPERIENCE}
+
+        \history{Software Engineer}{Enlighten}{Jan 2022 - Present}
+            \begin{resumelist}
+                \item Developed and maintained backend service used in distributed system for big data platform.
+                \item Implemented operational metrics system with scalable and high performant queries.
+                \item Implemented diagonal (multi-hop) cluster data syncing for clusters indirectly connected.
+                \item Implemented nestable hierarchical data model and related queries/functionality.
+                \item Primary skills: Java, Postgres, Vue.js, Apache Kafka, Apache Nifi, Grafana, and Prometheus.
+                \item Exposure: Hadoop, ElasticSearch, Apache Accumulo, Hashicorp Consul, Redis, Kubernetes, and AWS.
+            \end{resumelist}
+        \vspace*{6pt}
+
+        \history{Software Developer Analyst}{Goodville Mutual Casualty Company}{Jun 2018 - Jan 2022}
+            \begin{resumelist}
+                \item Implemented microservices and modern technologies to support modernization efforts.
+                \item Implemented migration from legacy claims system on IBM i to modernized Spring Boot and Angular system.
+                \item Developed and maintained IBM i system with RPGLE, DB2 for IBM i, Control Language, and DDS.
+                \item Primary skills: Java, Angular, ColdFusion, Drools, Apache FOP, XSLT, and Microsoft SQL Server.
+                \item Exposure: C\texttt{\#}, Node.js, JBPM, AWS, SalesForce, Kubernetes, Jenkins, and SOAP microservices.
+            \end{resumelist}
+
+    % education ===========================================================================================================================
+    \resumeheader{EDUCATION}
+
+        \history{Computer Science B.S. with Cybersecurity Minor}{University of Maryland Global Campus}{2018}
+            \begin{resumelist}
+                \item Algorithm Analysis, Data Structures, Concurrent Programming, Programming Language Design
+                \item Computer Architecture, Software Engineering, Network Security, Ethical Hacking, Digital Forensics
+            \end{resumelist}
+        \vspace*{6pt}
+
+        \history{Computer Science A.S.}{Harford Community College}{2015}
+            \begin{resumelist}
+                \item Assembly(x86), C, C\texttt{++}, Java, VB.NET, Networking, Multivariable Calculus, Discrete Mathematics
+            \end{resumelist}
+    
+    % projects ============================================================================================================================
+    \resumeheader{PERSONAL PROJECTS \& MISC}
+        
+        \interests{Interests:}{History of computing, cybersecurity, computer architecture, digital electronics}
+        \interests{Self-Taught:}{C, Go, Assembly (x86, ARM, RISC-V), Verilog, Xilinx Vivado, Autodesk Fusion, KiCAD}
+        \vspace*{12pt}
+
+        \project{Enki OS}{https://github.com/barrettotte/enki-os}{}
+            \begin{resumelist}
+                \item A small 32-bit x86 kernel made to study how operating systems function.
+                \item Implemented bootloader, FAT-16, Lib C, ELF loader, processes, userland, and more.
+            \end{resumelist}
+        \vspace*{6pt}
+
+        \project{ARM Assembly QR Code}{https://github.com/barrettotte/qr-asm}{}
+            \begin{resumelist}
+                \item A challenge to generate a QR code from scratch with only ARM assembly.
+                \item Implemented Reed-Solomon error correction with polynomial arithmetic and light Galois theory.
+            \end{resumelist}
+        \vspace*{6pt}
+
+        \project{DSL-5250}{https://github.com/barrettotte/DSL-5250}{}
+            \begin{resumelist}
+                \item A domain specific language written in Groovy designed for headless automation of a 5250 emulator.
+                \item Written as a proof of concept for easy screen automation/scraping of legacy systems during COVID-19.
+            \end{resumelist}
+        \vspace*{6pt}
+
+\end{document}

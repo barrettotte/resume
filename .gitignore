@@ -5,4 +5,9 @@
 *.out
 *.gz
 *.dvi
-.wakatime-project
+
+tmp/
+.env
+
+barrettotte-resume-private*
+private/
